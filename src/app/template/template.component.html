@@ -1,0 +1,17 @@
+<!-- <button (click)="getThem()"></button> -->
+<mat-form-field appearance="fill">
+    <mat-label>Chose Template</mat-label>
+    <mat-select (selectionChange)="onChange($event)">
+      <mat-option *ngFor="let temp of templates" [value]="temp">
+        {{temp.tempName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="example-button-row">
+    <div class="example-flex-container">
+        <button>
+          <mat-icon>add</mat-icon>
+        </button>
+        <button class="save">Save Current Template</button>
+    </div>  
+</div>

@@ -1,0 +1,44 @@
+mat-form-field{
+    margin-left: 2%;
+}
+
+mat-label{
+font-family: 'Montserrat';
+color: rgb(0, 58, 211);
+font-size: 15px;
+}
+
+button{
+   color: rgb(0, 58, 211);
+   background-color: white;
+   border-color: rgb(0, 58, 211,.45);
+   border-radius: 3px;
+   margin-left: 20px ;
+   border-width: 1px;
+}
+.save{
+    position: absolute;
+    right:2%;
+    top:13%;
+    height: 33px;
+    font-family: 'Montserrat';
+
+}
+button:hover {
+    background-color: rgb(255, 193, 36);
+    color: white;
+  }
+button:active {
+    background-color: rgb(255, 193, 36);
+    box-shadow: 2px 2px rgb(0, 58, 211,.45);
+    transform: translateY(2px);
+  }
+  
+  .example-button-row {
+    display: table-cell;
+  }
+  
+  .example-flex-container {
+    justify-content: space-between;
+  }
+  

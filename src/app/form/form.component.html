@@ -1,0 +1,15 @@
+<form [formGroup]='emailForm'>
+    <app-tinymce (newItemEvent)="updateContent($event)"></app-tinymce>
+        <div class="labels">
+            <label for="subject">SUBJECT</label>
+            <input formControlName="subject" id="subject" name="subject" type="text"/>
+        </div>
+        <div class="labels">
+            <label for="to">TO</label>
+            <input id="to" name="to" type="text" formControlName="to"/>
+        </div>  
+        <table><tr><td> <button (click)="submit(emailForm.value)" mat-raised-button>Send Mail</button></td></tr>
+        <tr><td> <button class="cancel" mat-raised-button>Cancel</button></td></tr></table>
+<div></div>
+     </form>
+

@@ -1,0 +1,47 @@
+button{
+    left:2%;
+    margin-bottom: 10px;
+    margin-left: 2%;
+    text-align: center;
+    color: rgb(255, 193, 36);
+    background-color: rgb(0, 58, 211);
+    font-family: 'Montserrat';
+    font-weight: 900;
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+}
+/* 
+.cancel{
+    margin-left: 87%;
+    text-align: center;
+    color: rgb(255, 193, 36);
+    background-color: rgb(0, 58, 211);
+    font-family: 'Montserrat';
+    font-weight: 900;
+    border-radius: 20px;
+    width: 130px;
+    height: 40px;
+} */
+
+label{
+    font-family: 'Montserrat';
+    margin-left: 2%;
+
+}
+.labels{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+input{
+    padding: 5px;
+    font-family: 'Montserrat';
+    /* font-size: large; */
+    position: absolute;
+    left: 8%;
+    border-radius: 10px;
+    border-width: 1.5px;
+    border-color: rgb(255, 193, 36);
+    border-style: groove;
+}
