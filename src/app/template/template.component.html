@@ -1,7 +1,7 @@
 <!-- <button (click)="getThem()"></button> -->
 <mat-form-field appearance="fill">
     <mat-label>Chose Template</mat-label>
-    <mat-select (selectionChange)="onChange($event)">
+    <mat-select (selectionChange)="onSelectionChange($event)">
       <mat-option *ngFor="let temp of templates" [value]="temp">
         {{temp.tempName}}
       </mat-option>

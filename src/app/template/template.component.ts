@@ -4,6 +4,8 @@ import { TemplatesService } from '../templates.service';
 import { Subscription } from 'rxjs';
 import { DataServiceService } from '../data-service.service';
 import { Data } from '@angular/router';
+import tinymce from 'tinymce';
+
 // interface Template {
 //   value: string;
 //   viewValue: string;
@@ -16,33 +18,35 @@ import { Data } from '@angular/router';
 })
 export class TemplateComponent implements OnInit {
 
-  templates: template[]=[];
+  templates: template[] = [];
   message!: string;
   subscription!: Subscription;
+  // templateNames!: string[];
 
-constructor(
-  private templateService: TemplatesService,
-  private data:DataServiceService
-){}
+  constructor(
+    private templateService: TemplatesService,
+    private data: DataServiceService
+  ) { }
   ngOnInit(): void {
     this.templateService.getTemplates().
-    subscribe(templates=> { this.templates=templates; console.log(this.templates);})
+      subscribe(templates => { this.templates = templates; console.log(this.templates); })
+
     this.subscription = this.data.currentTemplate.subscribe(message => this.message = message)
 
   }
-  onChange(ob:any)
-  {
+  onSelectionChange(ob: any) {
     console.log('selection changed');
-    let selectedTemplate=ob.value;
-    this.message=selectedTemplate.tempContent;
+    let selectedTemplate = ob.value;
+    this.message = selectedTemplate.tempContent;
     this.newMessage(selectedTemplate.tempContent);
     console.log("AFTER NEW MESSAGE CALLED : ", this.message);
-    console.log("on change called:",selectedTemplate.tempContent );
-//to pass
+    tinymce.activeEditor.setContent(this.message);
+    console.log("on change called:", selectedTemplate.tempContent);
+    //to pass
 
   }
-newMessage(content: string){
-  this.data.changeTemplate(content)
-}
+  newMessage(content: string) {
+    this.data.changeTemplate(content)
+  }
 
 }
